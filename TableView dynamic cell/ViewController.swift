@@ -22,6 +22,11 @@ class ViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(TextTableViewCell.self, forCellReuseIdentifier: TextTableViewCell.identifier)
+        
+        // We put these two commands so cell can calculate it's dynamic height.
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 80
+        
         return tableView
     }()
 
